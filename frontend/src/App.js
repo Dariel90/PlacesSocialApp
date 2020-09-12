@@ -1,35 +1,32 @@
-import React , {useState} from 'react';
-import GoalList from './components/GoalList/GoalList';
-import NewGoal from './components/NewGoal/NewGoal';
-import './App.css';
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  Switch
+} from 'react-router-dom';
+
+import Users from './user/pages/Users';
+import NewPlace from './places/pages/NewPlace';
+import MainNavigation from './shared/components/Navigation/MainNavigation';
 
 const App = () => {
-  const [courseGoals, setCourseGoals] = useState([
-    { id: 'cg1', text: 'Finish the Course' },
-    { id: 'cg2', text: 'Learn all about thr course Main Topic!' },
-    { id: 'cg3', text: 'Help other students in the course' },
-  ]);
-  
-
-  const addNewGoalHandler = (newGoal) => {
-    //setCourseGoals(courseGoals.concat(newGoal));
-    setCourseGoals((prevCourseGoals)=> prevCourseGoals.concat(newGoal));
-    console.log(courseGoals);
-  }
-
   return (
-    <div className="course-goals">
-      <h2>Course Goals</h2>
-      <NewGoal onAddGoal={addNewGoalHandler}/>
-      <GoalList goals={courseGoals} />
-    </div>
+    <Router>
+      <MainNavigation />
+      <main>
+        <Switch>
+          <Route path="/" exact>
+            <Users />
+          </Route>
+          <Route path="/places/new" exact>
+            <NewPlace />
+          </Route>
+          <Redirect to="/" />
+        </Switch>
+      </main>
+    </Router>
   );
 };
-//Same
-// class App extends React.Component {
-//   render(){
-//     return <h1 title="This is React">A React App!<span>Hola</span></h1>
-//   }
-// }
 
 export default App;
