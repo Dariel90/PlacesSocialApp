@@ -6,9 +6,9 @@ const Users = () => {
   const USERS = [
     {
       id: 'u1',
-      name: 'Max Schwarz',
+      name: 'Dariel Amores',
       image:
-        'https://images.pexels.com/photos/839011/pexels-photo-839011.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
+        'https://res.cloudinary.com/darcloudinary/image/upload/v1579290426/gg4l9n7ly6wsdhglvwnn.jpg',
       places: 3
     }
   ];
