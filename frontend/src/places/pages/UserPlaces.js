@@ -6,7 +6,7 @@ import PlaceList from '../components/PlaceList'
 const DUMMY_PLACES = [
     {
         id:'p1',
-        title:'La Bodegitda del Medio',
+        title:'La Bodeguita del Medio',
         description: 'Lugar emblemático de la coctelería cubana preferido por Hemingway',
         imageUrl: 'https://blog.acubavoy.com/wp-content/uploads/2015/09/vat-2344808_960_720.jpg',
         location:{
